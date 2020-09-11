@@ -5,6 +5,7 @@ import Todo from "./Todo";
 const ShowTodo = () => {
   let [todos, setTodos] = useState([]);
 
+  // get todo base on add, update and delete
   useEffect(() => {
     db.collection("todos").onSnapshot(function (snapshot) {
       snapshot.docChanges().forEach(function (change) {

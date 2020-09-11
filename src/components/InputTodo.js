@@ -8,6 +8,7 @@ const InputTodo = () => {
     setTodo(e.target.value);
   };
 
+  // add todo to firebase
   const handleSubmit = (e) => {
     e.preventDefault();
     db.collection("todos")
