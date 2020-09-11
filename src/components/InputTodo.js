@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { db } from "../config/fbConfig";
+import { Form, Button } from "react-bootstrap";
 
 const InputTodo = () => {
   let [todo, setTodo] = useState("");
@@ -22,17 +23,23 @@ const InputTodo = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="todo">Add Todo</label>
-      <input
-        type="text"
-        id="todo"
-        onChange={handleChange}
-        value={todo}
-        required
-      />
-      <input type="submit" value="Add" />
-    </form>
+    <Form onSubmit={handleSubmit} className="d-flex justify-content-center">
+      <Form.Group>
+        <Form.Control
+          type="text"
+          id="todo"
+          onChange={handleChange}
+          value={todo}
+          placeholder="Add Todo"
+          required
+        />
+      </Form.Group>
+      <Form.Group className="ml-2">
+        <Button variant="info" type="submit">
+          Add Todo
+        </Button>
+      </Form.Group>
+    </Form>
   );
 };
 

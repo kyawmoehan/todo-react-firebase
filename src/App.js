@@ -5,8 +5,8 @@ import ShowTodo from "./components/ShowTodos";
 
 function App() {
   return (
-    <div>
-      <h1>Todo</h1>
+    <div id="container">
+      <h1 className="text-center my-4">Todo</h1>
       <InputTodo />
       <ShowTodo />
     </div>

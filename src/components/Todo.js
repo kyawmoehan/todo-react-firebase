@@ -1,5 +1,6 @@
 import React from "react";
 import { db } from "../config/fbConfig";
+import { Row, Col, Button } from "react-bootstrap";
 
 const Todo = ({ todo }) => {
   // toggle complete state of todo
@@ -29,10 +30,25 @@ const Todo = ({ todo }) => {
       });
   };
   return (
-    <div className={todo.complete ? "complete" : ""}>
-      <span onClick={() => hanldeClick(todo.id)}>{todo.title}</span>
-      <button onClick={() => handleDelete(todo.id)}>Delete </button>
-    </div>
+    <Row className="border-bottom py-3">
+      <Col>
+        <span
+          onClick={() => hanldeClick(todo.id)}
+          className={todo.complete ? "complete" : ""}
+        >
+          {todo.title}
+        </span>
+      </Col>
+      <Col>
+        <Button
+          variant="outline-danger"
+          className="float-right"
+          onClick={() => handleDelete(todo.id)}
+        >
+          Delete
+        </Button>
+      </Col>
+    </Row>
   );
 };
 
